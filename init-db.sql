@@ -1,16 +1,18 @@
 CREATE DATABASE test_task;
 
+\c test_task;
+
 CREATE TABLE groups (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    country VARCHAR(50) NOT NULL
+    name VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE albums (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(50) NOT NULL,
+    title VARCHAR(255) NOT NULL,
     year INTEGER NOT NULL,
-    groupId INTEGER REFERENCES groups(id) ON DELETE CASCADE
+    groupid INTEGER REFERENCES groups(id) ON DELETE CASCADE
 );
 
 INSERT INTO groups (name, country) 

@@ -4,6 +4,6 @@ const router = express.Router();
 
 const { getGroups } = require('../controllers/groups.contollers');
 
-router.get('/', getGroups);
+router.get('/:offset', getGroups);
 
 module.exports = router;
