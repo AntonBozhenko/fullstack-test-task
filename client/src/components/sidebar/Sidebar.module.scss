@@ -1,0 +1,50 @@
+.sidebar {
+  width: 15vw;
+  height: 100vh;
+  display: flex;
+  border-right: 1px solid rgb(66, 66, 66);
+  flex-direction: column;
+  background-image: url("./sbf.jpeg");
+  background-size: cover;
+
+  .active {
+    background-color: rgba(240, 248, 255, 0.3);
+    color: black;
+    text-shadow: 0 0.5px 1px white, 0.5px 0 1px white;
+  }
+
+  a {
+    width: 100%;
+    margin: 0 auto;
+    transition: 0.3s;
+
+    text-decoration: none;
+    text-align: center;
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 40px;
+
+    border-bottom: 1px solid gainsboro;
+
+    &:hover {
+      background-color: rgba(240, 248, 255, 0.3);
+      color: black;
+      text-shadow: 0 0.5px 1px white, 0.5px 0 1px white;
+
+      @media (pointer: coarse) {
+        background-color: transparent;
+        color: aliceblue;
+        text-shadow: none;
+      }
+    }
+
+    &:active {
+      font-size: 19px;
+    }
+  }
+
+  a:first-child {
+    border-top: 1px solid gainsboro;
+    margin-top: 10px;
+  }
+}
