@@ -29,6 +29,22 @@ async function postAlbum(req, res) {
   }
 }
 
+async function editAlbum(req, res) {
+  const {
+    id, title, year, groupid,
+  } = req.body;
+
+  try {
+    await db.query(`
+    UPDATE albums SET title='${title}', year='${year}', groupid='${groupid}'  WHERE id=${id};
+    `);
+
+    res.sendStatus(200);
+  } catch (error) {
+    res.sendStatus(400);
+  }
+}
+
 module.exports = {
-  getAlbums, postAlbum,
+  getAlbums, postAlbum, editAlbum,
 };
