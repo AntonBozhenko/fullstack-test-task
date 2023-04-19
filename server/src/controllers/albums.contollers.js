@@ -12,6 +12,7 @@ async function getAlbums(_, res) {
     res.json(albums);
   } catch (error) {
     console.log(error);
+    res.sendStatus(500);
   }
 }
 
@@ -25,7 +26,8 @@ async function postAlbum(req, res) {
 
     res.json(id);
   } catch (error) {
-    res.sendStatus(400);
+    console.log(error);
+    res.sendStatus(500);
   }
 }
 
@@ -41,10 +43,24 @@ async function editAlbum(req, res) {
 
     res.sendStatus(200);
   } catch (error) {
-    res.sendStatus(400);
+    console.log(error);
+    res.sendStatus(500);
+  }
+}
+
+async function deleteAlbum(req, res) {
+  const { id } = req.body;
+
+  try {
+    await Album.destroy({ where: { id } });
+
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
   }
 }
 
 module.exports = {
-  getAlbums, postAlbum, editAlbum,
+  getAlbums, postAlbum, editAlbum, deleteAlbum,
 };

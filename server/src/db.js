@@ -1,10 +1,9 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
-const user = process.env.USER_NAME;
-const pass = process.env.PASSWORD;
+const { USER_NAME: user, PASSWORD: pass, DB_PORT: dbPort } = process.env;
 
-const db = new Sequelize(`postgres://${user}:${pass}@localhost:5432/test_task`);
+const db = new Sequelize(`postgres://${user}:${pass}@localhost:${dbPort}/test_task`);
 
 async function dbCheck() {
   try {
