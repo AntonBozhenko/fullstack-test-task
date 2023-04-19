@@ -8,13 +8,16 @@ function Sidebar() {
 
   return (
     <div className={styles.sidebar}>
-      {links.map(({ id, url, text }) => (
+      {links.map(({
+        id, url, src, text,
+      }) => (
         <Link
           key={id}
           to={url}
           className={(url === pathname) ? styles.active : undefined}
         >
-          {text}
+          <img src={src} alt={text} />
+          <p>{text}</p>
         </Link>
       ))}
     </div>
