@@ -1,10 +1,10 @@
 const { DataTypes } = require('sequelize');
 
-const { sequelize } = require('../db');
+const { db } = require('../db');
 
 const Group = require('./Group');
 
-const Album = sequelize.define(
+const Album = db.define(
   'album',
   {
     id: {

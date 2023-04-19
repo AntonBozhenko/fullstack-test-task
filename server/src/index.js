@@ -15,7 +15,7 @@ dbCheck();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/groups', groupsRoutes);
-app.use('/albums', albumsRoutes);
+app.use('/api/groups', groupsRoutes);
+app.use('/api/albums', albumsRoutes);
 
 app.listen(PORT, () => console.log(`сервер запущен на порту:${PORT}`));

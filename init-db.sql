@@ -58,7 +58,7 @@ VALUES
 ('Motionless in White', 'USA'),
 ('Chelsea Grin', 'USA');
 
-INSERT INTO albums (title, year, groupId) 
+INSERT INTO albums (title, year, groupid) 
 VALUES 
 ('Into the Wild', 2016, 1),
 ('Day X', 2018, 1),

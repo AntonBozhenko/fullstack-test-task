@@ -4,11 +4,11 @@ const { Sequelize } = require('sequelize');
 const user = process.env.USER_NAME;
 const pass = process.env.PASSWORD;
 
-const sequelize = new Sequelize(`postgres://${user}:${pass}@localhost:5432/test_task`);
+const db = new Sequelize(`postgres://${user}:${pass}@localhost:5432/test_task`);
 
 async function dbCheck() {
   try {
-    await sequelize.authenticate();
+    await db.authenticate();
     console.log('База данных успешно подключена.');
   } catch (error) {
     console.error('База не подключена.', error.message);
@@ -16,6 +16,6 @@ async function dbCheck() {
 }
 
 module.exports = {
-  sequelize,
+  db,
   dbCheck,
 };

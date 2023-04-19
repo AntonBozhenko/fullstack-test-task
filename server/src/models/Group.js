@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 
-const { sequelize } = require('../db');
+const { db } = require('../db');
 
-const Group = sequelize.define('group', {
+const Group = db.define('group', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
