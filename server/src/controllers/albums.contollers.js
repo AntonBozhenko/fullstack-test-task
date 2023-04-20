@@ -24,7 +24,7 @@ async function postAlbum(req, res) {
     INSERT INTO albums (title, year, groupid) VALUES ('${title}', '${year}', '${groupid}') RETURNING id
     `);
 
-    res.json(id);
+    res.json({ id });
   } catch (error) {
     console.log(error);
     res.sendStatus(500);

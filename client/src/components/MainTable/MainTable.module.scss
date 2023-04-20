@@ -1,0 +1,17 @@
+@mixin table($h, $w) {
+    height: $h;
+    width: $w;
+    margin-top: 35px;
+
+    h1 {
+        background-color: rgb(25, 22, 22);
+        color: aliceblue;
+        margin: 0;
+        text-align: center;
+        padding: 5px 0;
+    }
+}
+
+.main {
+    @include table(300px, 500px);
+}

@@ -1,0 +1,9 @@
+.form {
+  display: flex;
+  flex-wrap: nowrap;
+  border-bottom: 3px solid black;
+
+  * {
+    width: 25%;
+  }
+}

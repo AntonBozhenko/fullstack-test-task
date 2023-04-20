@@ -2,9 +2,9 @@
 import url from '../../url';
 
 export const columnDefs = [
-  { field: 'id' },
-  { field: 'name' },
-  { field: 'country' },
+  { headerName: 'id', width: 60, field: 'id' },
+  { headerName: 'Название', width: 300, field: 'name' },
+  { headerName: 'Страна', width: 140, field: 'country' },
 ];
 
 export async function fetchData(signal, offset, setDataIsOver, gridApi, setRowData) {

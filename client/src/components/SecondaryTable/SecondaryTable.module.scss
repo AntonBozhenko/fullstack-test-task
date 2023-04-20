@@ -1,0 +1,5 @@
+@import "../MainTable/MainTable.module.scss";
+
+.secondary {
+    @include table(300px, 700px);
+}

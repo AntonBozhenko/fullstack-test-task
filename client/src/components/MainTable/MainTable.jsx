@@ -3,6 +3,9 @@ import { AgGridReact } from 'ag-grid-react';
 
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+import styles from './MainTable.module.scss';
+
 import {
   columnDefs, fetchData, incrementOffset, onGridReady,
 } from './functions';
@@ -26,8 +29,8 @@ export default function MainTable() {
   }, [offset]);
 
   return (
-    <div className="ag-theme-alpine-dark" style={{ height: 300, width: 500 }}>
-      <h1 style={{ backgroundColor: 'black', margin: 0, textAlign: 'center' }}>Группы</h1>
+    <div className={`${styles.main} ag-theme-alpine-dark`}>
+      <h1>Группы</h1>
       <AgGridReact
         ref={gridApi}
         rowData={rowData}
