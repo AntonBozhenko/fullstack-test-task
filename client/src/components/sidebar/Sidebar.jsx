@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
 import links from './links';
 
-function Sidebar() {
+export default function Sidebar() {
   const { pathname } = useLocation();
 
   return (
@@ -23,5 +23,3 @@ function Sidebar() {
     </div>
   );
 }
-
-export default Sidebar;

@@ -3,8 +3,9 @@ import { Route, Routes } from 'react-router-dom';
 import styles from './App.module.scss';
 import Sidebar from './components/sidebar/Sidebar';
 import None from './pages/None/None';
+import Tables from './pages/Tables/Tables';
 
-function App() {
+export default function App() {
   return (
     <div className={styles.app}>
 
@@ -12,7 +13,7 @@ function App() {
 
       <div className={styles.content}>
         <Routes>
-          <Route index element={<p>Таблицы</p>} />
+          <Route index element={<Tables />} />
           <Route path="/section2" element={<None />} />
           <Route path="/section3" element={<None />} />
         </Routes>
@@ -21,5 +22,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

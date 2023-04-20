@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 
 const { dbCheck } = require('./db');
 
@@ -12,6 +13,7 @@ const app = express();
 
 dbCheck();
 
+app.use(cors({ origin: 'http://localhost:4000' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
